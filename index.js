@@ -53,7 +53,7 @@ run().catch(console.dir);
 
 
 app.get('/', (req, res) => {
-  res.send('this is me')
+  res.send('hi myh nam is akash')
 })
 
 
