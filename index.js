@@ -26,6 +26,7 @@ try{
     console.log('db_contact')
 
     const doctorBooking = client.db("doctor_protal").collection('services')
+    const partiendBooking = client.db("doctor_protal").collection('bookingService')
 
    
    
@@ -36,6 +37,12 @@ try{
         const services = await cursor.toArray();
         res.send(services)
        
+    })
+
+    app.post('/booking', async(req, res) =>{
+      const booking = req.body;
+      const result = partiendBooking.insertOne(booking);
+      res.send(result)
     })
 
 }
